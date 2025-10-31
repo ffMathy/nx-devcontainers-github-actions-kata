@@ -7,12 +7,18 @@ Your Nx monorepo with .NET and Angular is ready to use!
 ### Workspace Structure
 ```
 nx-example/
+├── .devcontainer/
+│   ├── devcontainer.json       ✓ DevContainer configuration
+│   ├── docker-compose.yml      ✓ Docker Compose setup
+│   ├── Dockerfile              ✓ Container image definition
+│   ├── README.md               ✓ Full DevContainer docs
+│   └── QUICK-START.md          ✓ 5-minute setup guide
 ├── apps/
-│   ├── my-angular-app/     ✓ Angular standalone application
-│   └── my-dotnet-app/      ✓ .NET 9 console application
+│   ├── my-angular-app/         ✓ Angular standalone application
+│   └── my-dotnet-app/          ✓ .NET 9 console application
 ├── libs/
-│   ├── my-angular-lib/     ✓ Angular component library
-│   └── my-dotnet-lib/      ✓ .NET class library
+│   ├── my-angular-lib/         ✓ Angular component library
+│   └── my-dotnet-lib/          ✓ .NET class library
 └── [Configuration files]
 ```
 
@@ -26,6 +32,8 @@ nx-example/
 - **Jest** - Testing framework for Angular
 - **ESBuild** - Fast bundler for Angular
 - **ESLint** - Linting for TypeScript/JavaScript
+- **DevContainer** - Containerized development environment
+- **Docker** - Container platform
 
 ## Verified Functionality
 
@@ -74,27 +82,41 @@ The Angular app imports and uses the component from `my-angular-lib` with TypeSc
 
 ## Quick Start Commands
 
-### View All Projects
+### Option 1: Using DevContainer (Recommended)
+
 ```bash
-npx nx show projects
+# Install Docker Desktop
+# Install VS Code Remote-Containers extension
+code --install-extension ms-vscode-remote.remote-containers
+
+# Open workspace and reopen in container
+# F1 -> "Dev Containers: Reopen in Container"
+# Wait for first-time setup (~5-10 minutes)
+
+# Everything is pre-configured inside the container!
 ```
 
-### Run Projects
+See [.devcontainer/QUICK-START.md](.devcontainer/QUICK-START.md) for details.
+
+### Option 2: Local Development
+
 ```bash
+# Navigate to workspace
+cd d:\source\nx-example
+
+# View all projects
+npx nx show projects
+
 # Run .NET console app
 npx nx run my-dotnet-app
 
 # Serve Angular app (http://localhost:4200)
 npx nx serve my-angular-app
-```
 
-### Build Everything
-```bash
+# Build everything
 npx nx run-many -t build
-```
 
-### View Dependency Graph
-```bash
+# View dependency graph
 npx nx graph
 ```
 
@@ -104,16 +126,27 @@ npx nx graph
 2. **WORKSPACE-STRUCTURE.md** - Detailed structure explanation
 3. **INTEGRATION-EXAMPLES.md** - Code examples and integration patterns
 4. **SETUP-COMPLETE.md** - This file!
+5. **.devcontainer/README.md** - Complete DevContainer documentation
+6. **.devcontainer/QUICK-START.md** - 5-minute DevContainer setup guide
 
 ## Next Steps
 
-### 1. Open in VSCode
+### 1. Choose Your Development Environment
+
+**Option A: DevContainer (Recommended)**
 ```bash
+# See .devcontainer/QUICK-START.md
+# Benefits: Identical environment for everyone, no local setup needed
+```
+
+**Option B: Local Installation**
+```bash
+# Open in VSCode
 cd d:\source\nx-example
 code .
 ```
 
-### 2. Install Recommended Extensions
+### 2. Install Recommended Extensions (if using local installation)
 - Nx Console
 - Angular Language Service
 - C# Dev Kit

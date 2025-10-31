@@ -6,6 +6,8 @@
 
 ✨ **Nx Monorepo with .NET and Angular** ✨
 
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/YOUR_REPO)
+
 This is a sample Nx workspace demonstrating how to use .NET and Angular projects together in a monorepo setup.
 
 ## Project Structure
@@ -25,6 +27,21 @@ This workspace contains:
 - Node.js (LTS version)
 - .NET SDK 8.0 or higher (this workspace uses .NET 9)
 - npm or yarn
+
+### Option 1: DevContainer (Recommended)
+
+For a consistent development environment with all tools pre-configured:
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
+2. Install VS Code extension: [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+3. Open workspace in VS Code
+4. Click "Reopen in Container" when prompted
+
+See [.devcontainer/README.md](.devcontainer/README.md) for detailed setup instructions.
+
+### Option 2: Local Installation
+
+Install the prerequisites above directly on your machine.
 
 ## Run tasks
 

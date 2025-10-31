@@ -1,0 +1,44 @@
+# Node
+node_modules/
+npm-debug.log
+.npm/
+dist/
+.angular/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.log
+.vs/
+
+# Nx
+.nx/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+out/
+
+# Test coverage
+coverage/
+
+# Environment
+.env
+.env.local
