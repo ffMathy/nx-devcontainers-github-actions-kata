@@ -1,10 +1,138 @@
 # NxExample
 
+# nx-example
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+✨ **Nx Monorepo with .NET and Angular** ✨
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+This is a sample Nx workspace demonstrating how to use .NET and Angular projects together in a monorepo setup.
+
+## Project Structure
+
+This workspace contains:
+
+### Applications (`apps/`)
+- **my-angular-app** - Angular standalone application with routing
+- **my-dotnet-app** - .NET console application
+
+### Libraries (`libs/`)
+- **my-angular-lib** - Angular standalone component library
+- **my-dotnet-lib** - .NET class library
+
+## Prerequisites
+
+- Node.js (LTS version)
+- .NET SDK 8.0 or higher (this workspace uses .NET 9)
+- npm or yarn
+
+## Run tasks
+
+To run tasks with Nx use:
+
+```sh
+npx nx <target> <project-name>
+```
+
+### Angular Commands
+
+```sh
+# Serve the Angular app
+npx nx serve my-angular-app
+
+# Build the Angular app
+npx nx build my-angular-app
+
+# Test the Angular app
+npx nx test my-angular-app
+
+# Lint the Angular app
+npx nx lint my-angular-app
+
+# Test the Angular library
+npx nx test my-angular-lib
+```
+
+### .NET Commands
+
+```sh
+# Build the .NET console app
+npx nx build my-dotnet-app
+
+# Run the .NET console app
+npx nx run my-dotnet-app
+
+# Build the .NET library
+npx nx build my-dotnet-lib
+
+# Test the .NET library (if tests exist)
+npx nx test my-dotnet-lib
+```
+
+## View Project Graph
+
+Visualize your workspace structure and project dependencies:
+
+```sh
+npx nx graph
+```
+
+## List All Projects
+
+```sh
+npx nx show projects
+```
+
+## Add New Projects
+
+### Adding Angular Projects
+
+```sh
+# Generate a new Angular app
+npx nx g @nx/angular:app apps/new-app
+
+# Generate a new Angular library
+npx nx g @nx/angular:lib libs/new-lib
+```
+
+### Adding .NET Projects
+
+```sh
+# Create a new .NET console app
+dotnet new console -o apps/new-dotnet-app
+
+# Create a new .NET class library
+dotnet new classlib -o libs/new-dotnet-lib
+
+# Create a new .NET web API
+dotnet new webapi -o apps/new-api
+```
+
+After creating .NET projects with the `dotnet` CLI, Nx will automatically detect them and make their build targets available.
+
+## Technologies Used
+
+- **Nx** (v22) - Smart monorepo build system
+- **@nx/angular** - Angular plugin for Nx
+- **@nx/dotnet** - .NET plugin for Nx (experimental)
+- **Angular** - Frontend framework with standalone components
+- **.NET 9** - Cross-platform .NET framework
+- **Jest** - Unit testing for Angular
+- **ESBuild** - Fast bundler for Angular
+
+## Learn More
+
+- [Nx Documentation](https://nx.dev)
+- [Angular in Nx](https://nx.dev/docs/technologies/angular/introduction)
+- [.NET in Nx](https://nx.dev/docs/technologies/dotnet/introduction)
+- [Nx Console](https://nx.dev/getting-started/editor-setup) - VSCode/IntelliJ extension
+
+## Community
+
+- [Discord](https://go.nx.dev/community)
+- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
+- [Youtube channel](https://www.youtube.com/@nxdevtools)
+- [Blog](https://nx.dev/blog)
 
 ## Run tasks
 
