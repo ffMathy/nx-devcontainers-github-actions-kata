@@ -10,15 +10,15 @@
       "extensions": [
         // Nx
         "nrwl.angular-console",
-        
+
         // Angular
         "angular.ng-template",
-        
+
         // .NET
         "ms-dotnettools.csdevkit",
         "ms-dotnettools.csharp",
         "ms-dotnettools.vscode-dotnet-runtime",
-        
+
         // General
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
@@ -49,6 +49,15 @@
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest",
       "ppa": true
+    },
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "9.0",
+      "installUsingApt": true
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20",
+      "nodeGypDependencies": true,
+      "installYarnUsingApt": false
     }
   },
 

@@ -6,10 +6,10 @@ This workspace includes DevContainer support for a consistent development enviro
 
 The DevContainer provides:
 
-- **.NET SDK 9.0** - Latest .NET development tools
-- **Node.js 20.x** - LTS version with npm
-- **Git** - Version control
-- **Common utilities** - vim, nano, curl, wget, etc.
+- **.NET SDK 9.0** - Installed via DevContainer feature
+- **Node.js 20.x** - Installed via DevContainer feature  
+- **Git** - Version control (via DevContainer feature)
+- **Common utilities** - zsh, oh-my-zsh, and base tools (via DevContainer feature)
 
 ### Pre-installed VS Code Extensions
 
@@ -170,26 +170,54 @@ Edit `.devcontainer/devcontainer.json`:
 }
 ```
 
-### Add More Tools
+### Add More DevContainer Features
+
+Edit `.devcontainer/devcontainer.json`:
+
+```json
+"features": {
+  "ghcr.io/devcontainers/features/dotnet:2": {
+    "version": "9.0"
+  },
+  "ghcr.io/devcontainers/features/node:1": {
+    "version": "20"
+  },
+  "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+}
+```
+
+Browse available features at: https://containers.dev/features
+
+### Add More Tools to the Base Image
 
 Edit `.devcontainer/Dockerfile`:
 
 ```dockerfile
-# Add your custom tools
+FROM mcr.microsoft.com/devcontainers/base:debian
+
+# Add custom packages if needed
 RUN apt-get update && apt-get install -y \
     your-package-name \
-    && apt-get clean -y
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
 ```
 
-### Change Node.js Version
+Note: Most tools should be added via DevContainer features when possible for better maintainability.
 
-Edit `.devcontainer/Dockerfile` and change:
+### Change .NET or Node.js Version
 
-```dockerfile
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+Edit `.devcontainer/devcontainer.json`:
+
+```json
+"features": {
+  "ghcr.io/devcontainers/features/dotnet:2": {
+    "version": "8.0"  // Change to desired .NET version
+  },
+  "ghcr.io/devcontainers/features/node:1": {
+    "version": "18"   // Change to desired Node.js version
+  }
+}
 ```
-
-To your desired version (e.g., `setup_18.x`).
 
 ### Add Environment Variables
 
