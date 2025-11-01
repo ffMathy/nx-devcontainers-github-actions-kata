@@ -35,9 +35,9 @@ jobs:
         with:
           push: never
           runCmd: |
-            nx affected --target=build
-            nx affected --target=lint
-            nx affected --target=test
+            npx nx affected --target=build
+            npx nx affected --target=lint
+            npx nx affected --target=test
           env: |
             NX_BASE
             NX_HEAD
