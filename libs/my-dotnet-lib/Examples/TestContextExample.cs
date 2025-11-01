@@ -5,7 +5,7 @@ class FrontendTestContext : IAsyncDisposable
   public async Task Initialize()
   {
     await BankApi.Initialize();
-    //TODO: run "angular start" for frontend
+    //TODO: run "yarn start" for frontend
     //TODO: spin up Playwright browser
   }
 

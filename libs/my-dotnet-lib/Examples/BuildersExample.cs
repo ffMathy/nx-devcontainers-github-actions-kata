@@ -69,7 +69,7 @@ class Program2
   {
     User user = await new TestUserBuilder()
       .WithValidatedEmail()
-      .WithName("Alice")
+      .Age(23)
       .CreateAsync();
 
     Console.WriteLine($"Created user: {user.Name}, Age: {user.Age}");
