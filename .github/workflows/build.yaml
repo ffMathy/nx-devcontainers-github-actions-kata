@@ -21,9 +21,6 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for nx affected to work
 
-      - name: Fetch base branch
-        run: git fetch origin main:main
-
       - name: Set NX SHAs for affected detection
         uses: nrwl/nx-set-shas@v4
         id: set-shas
